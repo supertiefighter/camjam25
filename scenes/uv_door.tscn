@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://23xhirgnrjx"]
+
+[ext_resource type="Script" path="res://scripts/UvDoor.cs" id="1_nlhoi"]
+[ext_resource type="Texture2D" uid="uid://qc41su5utlsd" path="res://icon.svg" id="1_yqneg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpvde"]
+size = Vector2(128, 128)
+
+[node name="UVDoor" type="AnimatableBody2D"]
+script = ExtResource("1_nlhoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cpvde")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_yqneg")
