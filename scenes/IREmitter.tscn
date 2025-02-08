@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b34qaxm2ir0wl"]
+
+[ext_resource type="Script" path="res://scripts/Emitter.cs" id="1_0o736"]
+[ext_resource type="PackedScene" uid="uid://cur0rt0tmtce0" path="res://scenes/IRLaser.tscn" id="2_lg7y7"]
+
+[node name="IREmitter" type="Node2D"]
+script = ExtResource("1_0o736")
+newLaser = ExtResource("2_lg7y7")

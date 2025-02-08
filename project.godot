@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="camjam25"
-run/main_scene="res://scenes/old/tilemapdemo.tscn"
+run/main_scene="res://scenes/lasertest.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -61,7 +61,7 @@ Down={
 [layer_names]
 
 2d_physics/layer_1="Wall"
-2d_physics/layer_2="Pushable"
+2d_physics/layer_2="Mirror"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Blocks Laser"
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cur0rt0tmtce0"]
+
+[ext_resource type="Script" path="res://scripts/IrLaser.cs" id="1_5ds8q"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6j1mk"]
+size = Vector2(1, 3)
+
+[node name="IRLaser" type="Node2D" node_paths=PackedStringArray("ray", "debugSprite")]
+script = ExtResource("1_5ds8q")
+ray = NodePath("RayCast2D")
+debugSprite = NodePath("Sprite2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(10000, 0)
+collision_mask = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+process_priority = 1
+texture = SubResource("PlaceholderTexture2D_6j1mk")
+offset = Vector2(0.5, 0)

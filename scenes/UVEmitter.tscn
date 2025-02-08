@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://vfigkal14o"]
+
+[ext_resource type="Script" path="res://scripts/Emitter.cs" id="1_ceyqb"]
+[ext_resource type="PackedScene" uid="uid://dx7ioo5r64rws" path="res://scenes/UVLaser.tscn" id="2_y6khy"]
+
+[node name="UVEmitter" type="Node2D"]
+script = ExtResource("1_ceyqb")
+newLaser = ExtResource("2_y6khy")
