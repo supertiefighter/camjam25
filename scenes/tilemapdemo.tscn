@@ -39,4 +39,3 @@ tile_set = SubResource("TileSet_kylf7")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("3_a7pck")]
-gamma = 25.0

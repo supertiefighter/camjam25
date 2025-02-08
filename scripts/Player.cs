@@ -1,17 +1,22 @@
 using Godot;
 using System;
 
-public partial class Player : Node2D
+public partial class Player : Node2D, IGridObject
 {
 	bool moving = false;
 	Vector2 moveTarget;
 	[Export]
 	int gridSize = 32;
 	[Export]
-	float gamma;
+	float gamma = 25;
 	float c1;
 	float c2;
 	Vector2 vel;
+
+	[Export]
+	RayCast2D wallRaycast;
+	[Export]
+	RayCast2D pushableRaycast;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -54,8 +59,20 @@ public partial class Player : Node2D
 	}
 
 	private void BeginMove(Vector2 movement){
-		moveTarget = Position.Snapped(gridSize)+movement;
-		GD.Print("moving to "+moveTarget); 
-		moving = true;
+		wallRaycast.TargetPosition=movement;
+		wallRaycast.ForceRaycastUpdate();
+		if (!wallRaycast.IsColliding()){
+			moveTarget = Position.Snapped(gridSize)+movement;
+			GD.Print("moving to "+moveTarget); 
+			moving = true;
+		}
+		else{
+			GD.Print("Cannot move due to wall");
+		}
 	}
+
+    public bool TryPush(IGridObject.Direction dir)
+    {
+        return false;
+    }
 }

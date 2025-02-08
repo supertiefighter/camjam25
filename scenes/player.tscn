@@ -6,15 +6,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irydw"]
 size = Vector2(32, 32)
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" node_paths=PackedStringArray("wallRaycast", "pushableRaycast")]
 script = ExtResource("1_mx0cl")
+gamma = 40.0
+wallRaycast = NodePath("WallRaycast")
+pushableRaycast = NodePath("PushableRaycast")
 
 [node name="PushableRaycast" type="RayCast2D" parent="."]
+position = Vector2(16, 16)
 target_position = Vector2(0, 32)
 collision_mask = 2
 collide_with_areas = true
 
 [node name="WallRaycast" type="RayCast2D" parent="."]
+position = Vector2(16, 16)
 target_position = Vector2(0, 32)
 collide_with_areas = true
 

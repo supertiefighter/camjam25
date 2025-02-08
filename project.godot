@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="camjam25"
 
+[editor]
+
+movie_writer/movie_file="/home/jadon/Documents/camjam25/recording.avi"
+
 [input]
 
 Left={
