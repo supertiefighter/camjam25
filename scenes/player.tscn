@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://1tfgvuf84qq0"]
+
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_jwix0"]
+[ext_resource type="Texture2D" uid="uid://br7ahki2iiymp" path="res://icon.svg" id="2_ebmht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77nkf"]
+
+[node name="Player" type="RigidBody2D"]
+lock_rotation = true
+linear_damp = 15.348
+script = ExtResource("1_jwix0")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ebmht")
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_77nkf")
