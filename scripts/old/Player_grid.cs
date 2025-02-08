@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Player : Node2D, IGridObject
+public partial class PlayerGrid : Node2D, IGridObject
 {
 	bool moving = false;
 	Vector2? movingDir = null;
