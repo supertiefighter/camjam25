@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=4 uid="uid://dw8tyh70auiw5"]
+
+[ext_resource type="Texture2D" uid="uid://de31pddvkwmd1" path="res://textures/tilemaptest.png" id="1_t6w1p"]
+[ext_resource type="PackedScene" uid="uid://bfh2b6mh55eoh" path="res://scenes/ball.tscn" id="2_c3wla"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8xbdb"]
+bounce = 0.68
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwhps"]
+texture = ExtResource("1_t6w1p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -8, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(11.84, 0)
+1:0/0/physics_layer_0/angular_velocity = 1.08
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 16, 16, -16, 16)
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1uhsi"]
+scenes/1/scene = ExtResource("2_c3wla")
+
+[sub_resource type="TileSet" id="TileSet_kylf7"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_8xbdb")
+sources/0 = SubResource("TileSetAtlasSource_xwhps")
+sources/1 = SubResource("TileSetScenesCollectionSource_1uhsi")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD/////AAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAABAAAAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAP3/AAABAAEAAAACAP3/AAABAAEAAAD///7/AAABAAEAAAAEAP3/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAABAAEAAAAFAAAAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAFAP3/AAABAAEAAAD//wEAAAABAAEAAAACAAAAAAABAAAAAAAAAP//AQAAAAAAAQACAP//AQAAAAAAAQABAP7/AQAAAAAAAQADAP//AQAAAAAAAQA=")
+tile_set = SubResource("TileSet_kylf7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
