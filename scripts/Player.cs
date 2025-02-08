@@ -65,8 +65,8 @@ public partial class Player : Node2D, IGridObject
 				
 			}
 		}
-		if (Position.Snapped(2f)==moveTarget){
-			Position=moveTarget;
+		if (Position.Snapped(1)==moveTarget){
+			Position=Position.Snapped(gridSize);
 			moving = false;
 			movingDir = null;
 		}
@@ -114,5 +114,10 @@ public partial class Player : Node2D, IGridObject
     public bool TryPush(Vector2 dir)
     {
         return false;
+    }
+
+    public void LaserHit(Vector2 direction, int colour)
+    {
+        throw new NotImplementedException();
     }
 }
