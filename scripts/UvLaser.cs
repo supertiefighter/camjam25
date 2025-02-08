@@ -7,7 +7,13 @@ public partial class UvLaser : Laser
 	public override void _Ready()
 	{
 		newReflectedLaser = ResourceLoader.Load<PackedScene>("res://scenes/UVLaser.tscn");
-		GD.Print(newReflectedLaser);
 	}
-	
+
+    protected override void OnHitObject(GodotObject obj)
+    {
+        base.OnHitObject(obj);
+		if (obj is UvDoor door){
+			door.hasUV=true;
+		}
+    }
 }

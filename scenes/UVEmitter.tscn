@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://vfigkal14o"]
+[gd_scene load_steps=4 format=3 uid="uid://vfigkal14o"]
 
 [ext_resource type="Script" path="res://scripts/Emitter.cs" id="1_ceyqb"]
 [ext_resource type="PackedScene" uid="uid://dx7ioo5r64rws" path="res://scenes/UVLaser.tscn" id="2_y6khy"]
+[ext_resource type="Texture2D" uid="uid://cfpk1yun4w6fj" path="res://textures/GammaLaser.png" id="3_1vkcj"]
 
 [node name="UVEmitter" type="Node2D"]
 script = ExtResource("1_ceyqb")
 newLaser = ExtResource("2_y6khy")
+
+[node name="GammaLaser" type="Sprite2D" parent="."]
+texture = ExtResource("3_1vkcj")
