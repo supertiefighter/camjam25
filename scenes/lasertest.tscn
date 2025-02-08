@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqincyk668t2c"]
+[gd_scene load_steps=9 format=3 uid="uid://dqincyk668t2c"]
 
 [ext_resource type="PackedScene" uid="uid://dx7dfjdpldgy1" path="res://scenes/Wall.tscn" id="1_p5xlr"]
 [ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/UVEmitter.tscn" id="2_lotyh"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="4_c64v3"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="5_gx7sa"]
 [ext_resource type="PackedScene" uid="uid://23xhirgnrjx" path="res://scenes/uv_door.tscn" id="6_a6wxp"]
+[ext_resource type="PackedScene" uid="uid://ccwlhriq0svxu" path="res://scenes/player.tscn" id="7_kppxs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hghta"]
 
 [node name="lasertest" type="Node2D"]
 
@@ -22,15 +25,6 @@ rotation = 3.0107
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Mirror" parent="." instance=ExtResource("4_c64v3")]
-position = Vector2(65, 162)
-scale = Vector2(3.54301, 1.02421)
-
-[node name="Mirror3" parent="." instance=ExtResource("4_c64v3")]
-position = Vector2(-178, 58)
-rotation = 1.5708
-scale = Vector2(3.54301, 1.02421)
-
 [node name="BurnableBox" parent="." instance=ExtResource("5_gx7sa")]
 position = Vector2(518, 32)
 
@@ -39,7 +33,24 @@ current = true
 
 [node name="UVDoor" parent="." instance=ExtResource("6_a6wxp")]
 position = Vector2(307, -150)
-gamma = 6.3
+gamma = 1.845
 
 [node name="IREmitter" parent="UVDoor" instance=ExtResource("3_53ebf")]
 position = Vector2(68, -3)
+
+[node name="Player" parent="." instance=ExtResource("7_kppxs")]
+position = Vector2(90, -108)
+
+[node name="Mirror" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(-84, 0)
+
+[node name="Mirror2" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(-100, 152)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-173, 71)
+collision_layer = 17
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_hghta")

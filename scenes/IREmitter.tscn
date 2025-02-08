@@ -9,5 +9,4 @@ script = ExtResource("1_0o736")
 newLaser = ExtResource("2_lg7y7")
 
 [node name="IrLaser" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
 texture = ExtResource("3_yt3wc")

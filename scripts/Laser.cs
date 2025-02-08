@@ -12,6 +12,11 @@ public abstract partial class Laser : Node2D
 	protected Laser reflected;
 	int depth = 0;
 
+	[Export]
+	AudioStreamPlayer2D audio;
+
+	Vector2 playerPos {get {return GetNode<PlayerTracker>("/root/PlayerTracker").player.GlobalPosition;} }
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -21,6 +26,13 @@ public abstract partial class Laser : Node2D
 	public override void _Process(double delta)
 	{
 		if (depth==0) CheckHit();
+		Vector2 p = GlobalPosition;
+		Vector2 dir = Vector2.Right.Rotated(GlobalRotation);
+		float d = dir.Dot(playerPos-p);
+		float length = ray.IsColliding()? (ray.GetCollisionPoint()-p).Length() : 10000000;
+		d = Math.Clamp(d, 0, length);
+		Vector2 s = p+dir*d;
+		audio.GlobalPosition=s;
 	}
 
 	void ScaleLaser(float d){
