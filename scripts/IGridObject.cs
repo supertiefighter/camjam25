@@ -3,7 +3,6 @@ using System.Security.AccessControl;
 using Godot;
 
 public interface IGridObject{
-    
     /// <summary>
     /// Try to push this object in the specified direction
     /// </summary>

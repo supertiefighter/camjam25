@@ -20,6 +20,8 @@ public partial class Player : Node2D, IGridObject
 	RayCast2D pushableRaycast;
 
 	Vector2? queuedMoveInput = null;
+
+	bool reachedHalfway = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -58,6 +60,10 @@ public partial class Player : Node2D, IGridObject
 		if (moving){
 			vel -= (c1*vel+c2*(Position-moveTarget))*(float)delta; 
 			Position+=vel*(float)delta;
+			if (!reachedHalfway&&(Position-moveTarget).LengthSquared()<256){
+				reachedHalfway=true;
+				
+			}
 		}
 		if (Position.Snapped(2f)==moveTarget){
 			Position=moveTarget;
@@ -69,7 +75,7 @@ public partial class Player : Node2D, IGridObject
 
 	private void TryStartMove(Vector2 movement){
 		if (moving){
-			if (((Vector2)movingDir-movement).LengthSquared()>0.1&&(Position-moveTarget).LengthSquared()>256){
+			if (((Vector2)movingDir-movement).LengthSquared()>0.1&&reachedHalfway){
 				queuedMoveInput = movement;
 			}
 			return;
@@ -93,6 +99,7 @@ public partial class Player : Node2D, IGridObject
 				GD.Print("moving to "+moveTarget); 
 				moving = true;
 				movingDir = movement;
+				reachedHalfway=false;
 			}
 			else{
 				GD.Print("Cannot move due to IGridObject");
