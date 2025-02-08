@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqincyk668t2c"]
+
+[ext_resource type="PackedScene" uid="uid://dx7dfjdpldgy1" path="res://scenes/Wall.tscn" id="1_p5xlr"]
+[ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/UVEmitter.tscn" id="2_lotyh"]
+[ext_resource type="PackedScene" uid="uid://b34qaxm2ir0wl" path="res://scenes/IREmitter.tscn" id="3_53ebf"]
+[ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="4_c64v3"]
+
+[node name="lasertest" type="Node2D"]
+
+[node name="Wall" parent="." instance=ExtResource("1_p5xlr")]
+position = Vector2(206, 258)
+
+[node name="IREmitter" parent="." instance=ExtResource("3_53ebf")]
+position = Vector2(60, 89)
+rotation = 0.86253
+
+[node name="UVEmitter" parent="." instance=ExtResource("2_lotyh")]
+position = Vector2(381, 19)
+rotation = 2.01408
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Mirror" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(65, 162)
+scale = Vector2(3.54301, 1.02421)
+
+[node name="Mirror2" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(73, -6)
+scale = Vector2(3.54301, 1.02421)
+
+[node name="Mirror3" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(-178, 58)
+rotation = 1.5708
+scale = Vector2(3.54301, 1.02421)
+
+[node name="Mirror4" parent="." instance=ExtResource("4_c64v3")]
+position = Vector2(316, 75)
+rotation = 1.5708
+scale = Vector2(3.54301, 1.02421)
