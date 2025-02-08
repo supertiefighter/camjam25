@@ -31,6 +31,7 @@ public partial class Player : Node2D, IGridObject
 		c2 = gamma*gamma;
 		GD.Print(c1);
 		GD.Print(c2);
+		moveTarget = Position;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,9 +55,10 @@ public partial class Player : Node2D, IGridObject
 			TryStartMove(gridSize*Vector2.Down);
 		}
 		
-
-		vel -= (c1*vel+c2*(Position-moveTarget))*(float)delta; 
-		Position+=vel*(float)delta;
+		if (moving){
+			vel -= (c1*vel+c2*(Position-moveTarget))*(float)delta; 
+			Position+=vel*(float)delta;
+		}
 		if (Position.Snapped(2f)==moveTarget){
 			Position=moveTarget;
 			moving = false;
@@ -75,18 +77,34 @@ public partial class Player : Node2D, IGridObject
 		wallRaycast.TargetPosition=movement;
 		wallRaycast.ForceRaycastUpdate();
 		if (!wallRaycast.IsColliding()){
-			moveTarget = Position.Snapped(gridSize)+movement;
-			GD.Print("moving to "+moveTarget); 
-			moving = true;
-			movingDir = movement;
-			queuedMoveInput=null;
+			pushableRaycast.TargetPosition=movement;
+			pushableRaycast.ForceRaycastUpdate();
+			bool canMove = true;
+			if (pushableRaycast.IsColliding()){
+				GodotObject collider = pushableRaycast.GetCollider();
+				if (collider is Node node){
+					if (node.GetParent() is IGridObject gridObject){
+						canMove = gridObject.TryPush(movement);
+					}
+				}
+			}
+			if (canMove){
+				moveTarget = Position.Snapped(gridSize)+movement;
+				GD.Print("moving to "+moveTarget); 
+				moving = true;
+				movingDir = movement;
+			}
+			else{
+				GD.Print("Cannot move due to IGridObject");
+			}
 		}
 		else{
 			GD.Print("Cannot move due to wall");
 		}
+		queuedMoveInput=null;
 	}
 
-    public bool TryPush(IGridObject.Direction dir)
+    public bool TryPush(Vector2 dir)
     {
         return false;
     }

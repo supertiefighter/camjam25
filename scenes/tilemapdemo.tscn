@@ -39,3 +39,6 @@ tile_set = SubResource("TileSet_kylf7")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("3_a7pck")]
+
+[node name="Player2" parent="." instance=ExtResource("3_a7pck")]
+position = Vector2(96, 0)
