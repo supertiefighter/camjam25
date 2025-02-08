@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx7ioo5r64rws"]
+[gd_scene load_steps=4 format=3 uid="uid://dx7ioo5r64rws"]
 
 [ext_resource type="Script" path="res://scripts/UvLaser.cs" id="1_6qw58"]
+[ext_resource type="Texture2D" uid="uid://c0qg0iobnh1l4" path="res://textures/FireParticle.png" id="2_iufk8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6j1mk"]
 size = Vector2(1, 3)
 
-[node name="UVLaser" type="Node2D" node_paths=PackedStringArray("ray", "debugSprite")]
+[node name="UVLaser" type="Node2D" node_paths=PackedStringArray("ray", "debugSprite", "audio")]
 process_priority = 1
 script = ExtResource("1_6qw58")
 ray = NodePath("RayCast2D")
 debugSprite = NodePath("Sprite2D")
+audio = NodePath("AudioStreamPlayer2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(10000, 0)
@@ -18,3 +20,8 @@ collision_mask = 11
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("PlaceholderTexture2D_6j1mk")
 offset = Vector2(0.5, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AudioStreamPlayer2D"]
+texture = ExtResource("2_iufk8")

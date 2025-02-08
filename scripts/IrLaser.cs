@@ -3,8 +3,6 @@ using System;
 
 public partial class IrLaser : Laser
 {
-	[Export]
-	public AudioStreamPlayer2D Player { get; set; }
 
 	AudioStreamGeneratorPlayback playback;
 
