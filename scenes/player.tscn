@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5rp7f1igd56g"]
+
+[ext_resource type="Texture2D" uid="uid://qc41su5utlsd" path="res://icon.svg" id="1_1w0fa"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_mx0cl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irydw"]
+size = Vector2(32, 32)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_mx0cl")
+
+[node name="PushableRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 32)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="WallRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 32)
+collide_with_areas = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_irydw")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_1w0fa")

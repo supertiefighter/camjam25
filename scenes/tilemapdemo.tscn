@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://dw8tyh70auiw5"]
+[gd_scene load_steps=8 format=4 uid="uid://dw8tyh70auiw5"]
 
 [ext_resource type="Texture2D" uid="uid://de31pddvkwmd1" path="res://textures/tilemaptest.png" id="1_t6w1p"]
 [ext_resource type="PackedScene" uid="uid://bfh2b6mh55eoh" path="res://scenes/ball.tscn" id="2_c3wla"]
+[ext_resource type="PackedScene" uid="uid://c5rp7f1igd56g" path="res://scenes/player.tscn" id="3_a7pck"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8xbdb"]
 bounce = 0.68
@@ -36,3 +37,6 @@ tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAD/////AAAAAAAAAAAAAAEAAAAAAAA
 tile_set = SubResource("TileSet_kylf7")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_a7pck")]
+gamma = 25.0
