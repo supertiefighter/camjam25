@@ -15,6 +15,10 @@ run/main_scene="res://scenes/lasertest.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerTracker="*res://scripts/PlayerTracker.cs"
+
 [dotnet]
 
 project/assembly_name="camjam25"
@@ -57,6 +61,31 @@ Down={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
+Aim_Left={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":-1.0,"script":null)
+]
+}
+Aim_Right={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
+]
+}
+Aim_Up={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":-1.0,"script":null)
+]
+}
+Aim_Down={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
+]
+}
+Grab={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":5,"axis_value":1.0,"script":null)
+]
+}
 
 [layer_names]
 
@@ -64,6 +93,11 @@ Down={
 2d_physics/layer_2="Mirror"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Blocks Laser"
+2d_physics/layer_5="Grabbable"
+
+[physics]
+
+2d/default_gravity=0.0
 
 [rendering]
 

@@ -7,9 +7,10 @@ public partial class UvDoor : Node2D
 	[Export]
 	Vector2 end;
 	public bool hasUV;
-	Vector2 vel;
+	float vel;
 	[Export]
 	float gamma=1;
+	float x = 0;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -20,12 +21,14 @@ public partial class UvDoor : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Vector2 target = start;
 		if (hasUV){
-			target = end;
+			vel -= 2*gamma*vel*(float)delta+gamma*gamma*(float)delta*(x-1);
 		}
-		vel -= 2*gamma*vel*(float)delta+gamma*gamma*(float)delta*(Position-target);
-		Position+=vel*(float)delta;
+		else{
+			vel -= 2*gamma*vel*(float)delta+gamma*gamma*(float)delta*x;
+		}
+		x+=vel*(float)delta;
+		Position = x*end+(1-x)*start;
 		hasUV = false;
 	}
 
