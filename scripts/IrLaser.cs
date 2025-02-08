@@ -15,4 +15,12 @@ public partial class IrLaser : Laser
 		if (Input.IsActionPressed("Left")){Rotation+=(float)delta*0.1f;}
 		if (Input.IsActionPressed("Right")) {Rotation+=(float)delta*-0.1f;}
     }
+
+    protected override void OnHitObject(GodotObject obj)
+    {
+        base.OnHitObject(obj);
+		if (obj is BurnableBox box){
+			box.Ignite();
+		}
+    }
 }

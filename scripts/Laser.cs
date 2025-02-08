@@ -27,14 +27,10 @@ public abstract partial class Laser : Node2D
 		debugSprite.Scale=new Vector2(d, debugSprite.Scale.Y);
 	}
 
-	void OnHitObject(GodotObject obj){
-		if (obj is Node node) GD.Print(node.Name);
-		GD.Print(depth);
+	protected virtual void OnHitObject(GodotObject obj){
 		if (obj is Mirror m&& depth<100){
 			Vector2 n = ray.GetCollisionNormal();
 			Vector2 p = ray.GetCollisionPoint();
-			GD.Print(n);
-			GD.Print(p);
 			if (reflected is null){
 				reflected = newReflectedLaser.Instantiate<Laser>();
 				AddChild(reflected);
