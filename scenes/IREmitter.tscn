@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b34qaxm2ir0wl"]
+[gd_scene load_steps=5 format=3 uid="uid://b34qaxm2ir0wl"]
 
 [ext_resource type="Script" path="res://scripts/Emitter.cs" id="1_0o736"]
 [ext_resource type="PackedScene" uid="uid://cur0rt0tmtce0" path="res://scenes/IRLaser.tscn" id="2_lg7y7"]
 [ext_resource type="Texture2D" uid="uid://bsjexc3l2iie" path="res://textures/IRLaser.png" id="3_yt3wc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d85p2"]
+size = Vector2(32, 52)
 
 [node name="IREmitter" type="Node2D"]
 script = ExtResource("1_0o736")
@@ -10,3 +13,11 @@ newLaser = ExtResource("2_lg7y7")
 
 [node name="IrLaser" type="Sprite2D" parent="."]
 texture = ExtResource("3_yt3wc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_d85p2")

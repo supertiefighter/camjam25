@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvmotqt1t41k1"]
 
 [ext_resource type="Script" path="res://scripts/Mirror.cs" id="1_8hf66"]
-[ext_resource type="Texture2D" uid="uid://qc41su5utlsd" path="res://icon.svg" id="1_ejrm4"]
+[ext_resource type="Texture2D" uid="uid://mqnu0mjw4vn" path="res://textures/Mirror.png" id="2_pm1xk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8rgj"]
-size = Vector2(64, 2)
+size = Vector2(57.905, 2)
 
 [node name="Mirror" type="StaticBody2D"]
 disable_mode = 2
@@ -13,8 +13,7 @@ collision_mask = 0
 script = ExtResource("1_8hf66")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.1)
-texture = ExtResource("1_ejrm4")
+texture = ExtResource("2_pm1xk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v8rgj")

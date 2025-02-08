@@ -1,19 +1,16 @@
 [gd_scene load_steps=9 format=3 uid="uid://dqincyk668t2c"]
 
-[ext_resource type="PackedScene" uid="uid://dx7dfjdpldgy1" path="res://scenes/Wall.tscn" id="1_p5xlr"]
 [ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/UVEmitter.tscn" id="2_lotyh"]
 [ext_resource type="PackedScene" uid="uid://b34qaxm2ir0wl" path="res://scenes/IREmitter.tscn" id="3_53ebf"]
 [ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="4_c64v3"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="5_gx7sa"]
 [ext_resource type="PackedScene" uid="uid://23xhirgnrjx" path="res://scenes/uv_door.tscn" id="6_a6wxp"]
+[ext_resource type="PackedScene" uid="uid://iymd7rfuva8m" path="res://scenes/uv_box.tscn" id="7_dk8t1"]
 [ext_resource type="PackedScene" uid="uid://ccwlhriq0svxu" path="res://scenes/player.tscn" id="7_kppxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hghta"]
 
 [node name="lasertest" type="Node2D"]
-
-[node name="Wall" parent="." instance=ExtResource("1_p5xlr")]
-position = Vector2(206, 258)
 
 [node name="IREmitter" parent="." instance=ExtResource("3_53ebf")]
 position = Vector2(60, 89)
@@ -54,3 +51,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_hghta")
+
+[node name="UVBox" parent="." instance=ExtResource("7_dk8t1")]
+position = Vector2(253, 113)

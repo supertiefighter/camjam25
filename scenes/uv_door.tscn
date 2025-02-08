@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://23xhirgnrjx"]
 
 [ext_resource type="Script" path="res://scripts/UvDoor.cs" id="1_nlhoi"]
-[ext_resource type="Texture2D" uid="uid://qc41su5utlsd" path="res://icon.svg" id="1_yqneg"]
+[ext_resource type="Texture2D" uid="uid://dk1i57wytyd1f" path="res://textures/MovableBlock.png" id="2_ny24q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpvde"]
-size = Vector2(128, 128)
+size = Vector2(32, 32)
 
 [node name="UVDoor" type="AnimatableBody2D"]
 script = ExtResource("1_nlhoi")
@@ -13,4 +13,4 @@ script = ExtResource("1_nlhoi")
 shape = SubResource("RectangleShape2D_cpvde")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("1_yqneg")
+texture = ExtResource("2_ny24q")

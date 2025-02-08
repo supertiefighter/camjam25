@@ -36,11 +36,11 @@ public abstract partial class Laser : Node2D
 	}
 
 	void ScaleLaser(float d){
-		debugSprite.Scale=new Vector2(d, debugSprite.Scale.Y);
+		if (debugSprite is not null) debugSprite.Scale=new Vector2(d, debugSprite.Scale.Y);
 	}
 
 	protected virtual void OnHitObject(GodotObject obj){
-		if (obj is Mirror m&& depth<100){
+		if (obj is Mirror m&& depth<20){
 			Vector2 n = ray.GetCollisionNormal();
 			Vector2 p = ray.GetCollisionPoint();
 			if (reflected is null){

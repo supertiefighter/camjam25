@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://iymd7rfuva8m"]
+
+[ext_resource type="Script" path="res://scripts/UvBox.cs" id="1_f1fkn"]
+[ext_resource type="Texture2D" uid="uid://dk1i57wytyd1f" path="res://textures/MovableBlock.png" id="2_4bemp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpvde"]
+size = Vector2(32, 32)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_f1fkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cpvde")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_4bemp")
