@@ -20,6 +20,8 @@ public partial class Hole : StaticBody2D
 	}
 
 	public void FillerFound(Node2D filler){
+		GD.Print(filler.Name);
+		GD.Print(Name);
 		Player p = GetNode<PlayerTracker>("/root/PlayerTracker").player;
 		if (p.grabbed == filler) p.grabbed = null;
 		filler.GetParent().RemoveChild(filler);

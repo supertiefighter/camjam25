@@ -21,6 +21,12 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_17wuy"]
 scenes/1/scene = ExtResource("3_38bsk")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcpx2"]
+texture = ExtResource("5_ch3dy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 8, -16, 16, 16, 16, 16, -16, -16, -16)
+
 [sub_resource type="TileSet" id="TileSet_52yy2"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -29,6 +35,7 @@ physics_layer_1/collision_mask = 8
 sources/0 = SubResource("TileSetAtlasSource_3xafx")
 sources/2 = SubResource("TileSetScenesCollectionSource_17wuy")
 sources/1 = SubResource("TileSetAtlasSource_l633n")
+sources/3 = SubResource("TileSetAtlasSource_wcpx2")
 
 [node name="LevelTemplate2" type="Node2D"]
 

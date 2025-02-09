@@ -17,6 +17,11 @@ public partial class IrLaser : Laser
     public override void _Process(double delta)
     {
         base._Process(delta);
+
+		Rumble r = GetNode<Rumble>("/root/Rumble");
+		Player p = GetNode<PlayerTracker>("/root/PlayerTracker").player;
+		float intensity = 2/Mathf.Pow((audio.GlobalPosition-p.GlobalPosition).Length(), 0.25f);
+		r.SetVolume(intensity);
 		
     }
 
