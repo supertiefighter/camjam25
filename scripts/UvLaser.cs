@@ -20,7 +20,9 @@ public partial class UvLaser : Laser
     protected override void OnHitObject(GodotObject obj)
     {
         base.OnHitObject(obj);
+		GD.Print(obj);
 		if (obj is UvDoor door){
+			GD.Print(door.Name);
 			door.hasUV=true;
 		}
 		if (obj is UvBox box){
