@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 PlayerTracker="*res://scripts/PlayerTracker.cs"
 Rumble="*res://scripts/Rumble.cs"
+Music="*res://scripts/Music.cs"
 
 [display]
 
