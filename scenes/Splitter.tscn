@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yryrb8rhaxc8"]
 
 [ext_resource type="Script" path="res://scripts/Splitter.cs" id="1_fvna3"]
-[ext_resource type="Texture2D" uid="uid://bf828pskyf7u2" path="res://textures/MC.png" id="2_lmlt3"]
+[ext_resource type="Texture2D" uid="uid://cses1xvu561g5" path="res://textures/LaserSplitter.png" id="2_bnf3c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rvw23"]
 radius = 16.0
@@ -14,4 +14,4 @@ script = ExtResource("1_fvna3")
 shape = SubResource("CircleShape2D_rvw23")
 
 [node name="Mc" type="Sprite2D" parent="."]
-texture = ExtResource("2_lmlt3")
+texture = ExtResource("2_bnf3c")

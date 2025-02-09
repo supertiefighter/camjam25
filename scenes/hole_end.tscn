@@ -1,15 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://gqudogqpffef"]
+[gd_scene load_steps=4 format=3 uid="uid://chi3jy42qxum1"]
 
-[ext_resource type="Script" path="res://scripts/KeyDoor.cs" id="1_k6k8v"]
-[ext_resource type="Texture2D" uid="uid://ci2bjee3rm1nx" path="res://textures/Door.png" id="2_hio77"]
+[ext_resource type="Script" path="res://scripts/Hole.cs" id="1_rj2fn"]
+[ext_resource type="Texture2D" uid="uid://qppkybmk8w4s" path="res://textures/WaterEnd.png" id="2_kjh3c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnwcb"]
 size = Vector2(32, 32)
 
-[node name="KeyDoor" type="StaticBody2D" node_paths=PackedStringArray("rays")]
+[node name="Hole" type="StaticBody2D" node_paths=PackedStringArray("rays")]
 collision_layer = 9
-collision_mask = 32
-script = ExtResource("1_k6k8v")
+collision_mask = 0
+script = ExtResource("1_rj2fn")
 rays = [NodePath("RayCast2D"), NodePath("RayCast2D2"), NodePath("RayCast2D4"), NodePath("RayCast2D3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -18,29 +18,29 @@ shape = SubResource("RectangleShape2D_fnwcb")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(-16, -16)
 target_position = Vector2(0, 32)
-collision_mask = 32
+collision_mask = 64
 hit_from_inside = true
 
 [node name="RayCast2D2" type="RayCast2D" parent="."]
 position = Vector2(16, 16)
 rotation = 3.14159
 target_position = Vector2(0, 32)
-collision_mask = 32
+collision_mask = 64
 hit_from_inside = true
 
 [node name="RayCast2D4" type="RayCast2D" parent="."]
 position = Vector2(-16, 16)
 rotation = 4.71239
 target_position = Vector2(0, 32)
-collision_mask = 32
+collision_mask = 64
 hit_from_inside = true
 
 [node name="RayCast2D3" type="RayCast2D" parent="."]
 position = Vector2(16, -16)
 rotation = 1.5708
 target_position = Vector2(0, 32)
-collision_mask = 32
+collision_mask = 64
 hit_from_inside = true
 
-[node name="Door" type="Sprite2D" parent="."]
-texture = ExtResource("2_hio77")
+[node name="WaterEnd" type="Sprite2D" parent="."]
+texture = ExtResource("2_kjh3c")

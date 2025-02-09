@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 PlayerTracker="*res://scripts/PlayerTracker.cs"
 Rumble="*res://scripts/Rumble.cs"
 
+[display]
+
+window/size/mode=3
+
 [dotnet]
 
 project/assembly_name="camjam25"
