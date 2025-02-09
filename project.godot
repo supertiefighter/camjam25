@@ -97,6 +97,7 @@ Grab={
 2d_physics/layer_5="Grabbable"
 2d_physics/layer_6="key"
 2d_physics/layer_7="Fills hole"
+2d_physics/layer_8="win"
 
 [physics]
 

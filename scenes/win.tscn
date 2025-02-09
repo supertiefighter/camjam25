@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv6mhylhl1nye"]
+
+[ext_resource type="Script" path="res://scripts/Win.cs" id="1_u1veb"]
+[ext_resource type="Texture2D" uid="uid://qc41su5utlsd" path="res://icon.svg" id="2_kl73l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdvfo"]
+size = Vector2(32, 32)
+
+[node name="Win" type="Area2D"]
+collision_layer = 128
+collision_mask = 4
+script = ExtResource("1_u1veb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wdvfo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_kl73l")
+
+[connection signal="body_entered" from="." to="." method="onBodyEntered"]
