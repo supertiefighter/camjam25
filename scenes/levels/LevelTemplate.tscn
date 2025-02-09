@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b0bb5b30q1i1l"]
+[gd_scene load_steps=10 format=4 uid="uid://c6mr5vki135dy"]
 
 [ext_resource type="Texture2D" uid="uid://dni6v05dq37bl" path="res://textures/Background.png" id="2_i2kn5"]
 [ext_resource type="PackedScene" uid="uid://ccwlhriq0svxu" path="res://scenes/player.tscn" id="2_ybu2e"]
@@ -30,7 +30,7 @@ sources/0 = SubResource("TileSetAtlasSource_3xafx")
 sources/2 = SubResource("TileSetScenesCollectionSource_17wuy")
 sources/1 = SubResource("TileSetAtlasSource_l633n")
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="LevelTemplate2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_ybu2e")]
 
