@@ -23,6 +23,7 @@ public partial class UvDoor : Node2D
 	{
 		if (hasUV){
 			vel -= 2*gamma*vel*(float)delta+gamma*gamma*(float)delta*(x-1);
+			GD.Print("moving");
 		}
 		else{
 			vel -= 2*gamma*vel*(float)delta+gamma*gamma*(float)delta*x;

@@ -13,6 +13,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.674157, 0.692308), -4.4989, -4
 point_count = 3
 
 [node name="Keybox" type="StaticBody2D" node_paths=PackedStringArray("fire")]
+collision_layer = 9
 script = ExtResource("1_ehxpl")
 fire = NodePath("CPUParticles2D")
 key = ExtResource("2_8eu2p")
