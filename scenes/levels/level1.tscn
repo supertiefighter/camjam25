@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://dsodg0jt5mov1"]
+[gd_scene load_steps=8 format=4 uid="uid://dsodg0jt5mov1"]
 
 [ext_resource type="PackedScene" uid="uid://b0bb5b30q1i1l" path="res://scenes/levels/LevelTemplate.tscn" id="1_4nbl8"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="2_6mcr2"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/levels/UVEmitter.tscn" id="3_edaip"]
 [ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="4_6tpd3"]
 [ext_resource type="PackedScene" uid="uid://b34qaxm2ir0wl" path="res://scenes/IREmitter.tscn" id="4_qtrbx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q8n88"]
+font_size = 30
 
 [node name="LevelTemplate" instance=ExtResource("1_4nbl8")]
 
@@ -76,8 +79,26 @@ position = Vector2(-400, -224)
 rotation = 1.5708
 
 [node name="Mirror" parent="." index="22" instance=ExtResource("4_6tpd3")]
-position = Vector2(-288, 208)
+position = Vector2(-288, 192)
 
 [node name="UVEmitter" parent="." index="23" instance=ExtResource("3_edaip")]
-position = Vector2(16, 224)
-rotation = -1.5708
+position = Vector2(16, -224)
+rotation = 1.57079
+
+[node name="Label" type="Label" parent="." index="24"]
+modulate = Color(1, 1, 0, 1)
+offset_left = 224.0
+offset_top = -48.0
+offset_right = 514.0
+offset_bottom = 9.0
+text = "Go here to win"
+label_settings = SubResource("LabelSettings_q8n88")
+
+[node name="Label2" type="Label" parent="." index="25"]
+modulate = Color(1, 1, 0, 1)
+offset_left = -448.0
+offset_top = 208.0
+offset_right = 205.0
+offset_bottom = 265.0
+text = "Press RT to pick up mirrors (RT again to drop)"
+label_settings = SubResource("LabelSettings_q8n88")
