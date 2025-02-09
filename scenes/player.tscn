@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bf828pskyf7u2" path="res://textures/MC.png" id="2_y8dva"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdygq"]
-radius = 17.2
+radius = 15.0
 
 [node name="Player" type="RigidBody2D" node_paths=PackedStringArray("rotating_stuff", "grabRay")]
+collision_layer = 5
 lock_rotation = true
 linear_damp = 15.348
 script = ExtResource("1_jwix0")

@@ -23,15 +23,16 @@ position = Vector2(428, -112)
 rotation = 3.0107
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="BurnableBox" parent="." instance=ExtResource("5_gx7sa")]
-position = Vector2(518, 32)
+position = Vector2(187, -4)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
 [node name="UVDoor" parent="." instance=ExtResource("6_a6wxp")]
-position = Vector2(307, -150)
+position = Vector2(-219, -130)
 gamma = 1.845
 
 [node name="IREmitter" parent="UVDoor" instance=ExtResource("3_53ebf")]
@@ -47,16 +48,16 @@ position = Vector2(-84, 0)
 position = Vector2(-100, 152)
 
 [node name="UVBox" parent="." instance=ExtResource("7_dk8t1")]
-position = Vector2(253, 113)
+position = Vector2(169, 59)
 
 [node name="Splitter" parent="." instance=ExtResource("8_3vq2h")]
 position = Vector2(-119, -85)
 
 [node name="Keybox" parent="." instance=ExtResource("9_p5bvj")]
-position = Vector2(57, 282)
+position = Vector2(-229, 7)
 
 [node name="KeyDoor" parent="." instance=ExtResource("10_wtagy")]
 position = Vector2(-253, 128)
 
 [node name="Hole" parent="." instance=ExtResource("11_g273u")]
-position = Vector2(218, 208)
+position = Vector2(163, 129)

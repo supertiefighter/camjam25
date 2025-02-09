@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvmiw012til3y"]
+[gd_scene load_steps=4 format=3 uid="uid://dvmiw012til3y"]
 
 [ext_resource type="Script" path="res://scripts/Hole.cs" id="1_l14mh"]
+[ext_resource type="Texture2D" uid="uid://hy8h30cqo3sd" path="res://textures/WaterCont.png" id="2_gehxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fnwcb"]
 size = Vector2(32, 32)
@@ -40,3 +41,6 @@ rotation = 1.5708
 target_position = Vector2(0, 32)
 collision_mask = 64
 hit_from_inside = true
+
+[node name="WaterCont" type="Sprite2D" parent="."]
+texture = ExtResource("2_gehxv")
