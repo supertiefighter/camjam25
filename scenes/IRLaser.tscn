@@ -3,10 +3,9 @@
 [ext_resource type="Script" path="res://scripts/IrLaser.cs" id="1_5ds8q"]
 [ext_resource type="AudioStream" uid="uid://d4njpifyroip1" path="res://audio/ir.ogg" id="2_k6hbd"]
 
-[node name="IRLaser" type="Node2D" node_paths=PackedStringArray("ray", "debugSprite", "audio")]
+[node name="IRLaser" type="Node2D" node_paths=PackedStringArray("ray", "audio")]
 script = ExtResource("1_5ds8q")
 ray = NodePath("RayCast2D")
-debugSprite = NodePath("")
 audio = NodePath("AudioStreamPlayer2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

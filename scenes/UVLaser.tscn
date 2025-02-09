@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/UvLaser.cs" id="1_6qw58"]
 
-[node name="UVLaser" type="Node2D" node_paths=PackedStringArray("ray", "debugSprite", "audio")]
+[node name="UVLaser" type="Node2D" node_paths=PackedStringArray("ray", "audio")]
 process_priority = 1
 script = ExtResource("1_6qw58")
 ray = NodePath("RayCast2D")
-debugSprite = NodePath("")
 audio = NodePath("AudioStreamPlayer2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

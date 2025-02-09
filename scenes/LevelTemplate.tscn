@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0bb5b30q1i1l"]
+[gd_scene load_steps=9 format=3 uid="uid://b0bb5b30q1i1l"]
 
 [ext_resource type="Texture2D" uid="uid://dni6v05dq37bl" path="res://textures/Background.png" id="2_i2kn5"]
 [ext_resource type="PackedScene" uid="uid://ccwlhriq0svxu" path="res://scenes/player.tscn" id="2_ybu2e"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="3_38bsk"]
+[ext_resource type="Texture2D" uid="uid://v2unm0njuliu" path="res://textures/Wall.png" id="3_g0g7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xafx"]
 texture = ExtResource("2_i2kn5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l633n"]
+texture = ExtResource("3_g0g7i")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -16,11 +22,14 @@ scenes/1/scene = ExtResource("3_38bsk")
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_3xafx")
 sources/2 = SubResource("TileSetScenesCollectionSource_17wuy")
+sources/1 = SubResource("TileSetAtlasSource_l633n")
 
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_ybu2e")]
-position = Vector2(16, 0)
+position = Vector2(558, -3)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_52yy2")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -8,7 +8,7 @@ public partial class Player : RigidBody2D
 	[Export]
 	RayCast2D grabRay;
 
-	Node2D grabbed;
+	public Node2D grabbed;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -31,7 +31,7 @@ public partial class Player : RigidBody2D
 		}
 		}
 		if (grabbed is not null)
-			grabbed.GlobalPosition = GlobalPosition+(Vector2.Up*32).Rotated(rotating_stuff.GlobalRotation);
+			grabbed.GlobalPosition = GlobalPosition+(Vector2.Up*40).Rotated(rotating_stuff.GlobalRotation);
 		
 		if (Input.IsActionJustPressed("Grab")){
 			if (grabbed is null){

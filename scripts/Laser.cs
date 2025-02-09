@@ -15,6 +15,9 @@ public abstract partial class Laser : Node2D
 	[Export]
 	AudioStreamPlayer2D audio;
 
+	protected Laser split1;
+	protected Laser split2;
+
 	Vector2 playerPos {get {return GetNode<PlayerTracker>("/root/PlayerTracker").player.GlobalPosition;} }
 
 	// Called when the node enters the scene tree for the first time.
@@ -56,6 +59,30 @@ public abstract partial class Laser : Node2D
 		else{
 			RemoveReflectedLaser();
 		}
+
+		if (obj is Splitter s && depth<20){
+			Vector2 p = ray.GetCollisionPoint();
+			Vector2 c = s.GlobalPosition;
+			Vector2 r = p-c;
+			if (split1 is null){
+				split1 = newReflectedLaser.Instantiate<Laser>();
+				AddChild(split1);
+				split1.depth=depth+1;
+			}
+			if (split2 is null){
+				split2 = newReflectedLaser.Instantiate<Laser>();
+				AddChild(split2);
+				split2.depth=depth+1;
+			}
+			split1.GlobalPosition = c + r.Rotated(2*Mathf.Pi/3);
+			split2.GlobalPosition = c + r.Rotated(-2*Mathf.Pi/3);
+			split1.GlobalRotation = r.Angle()+2*Mathf.Pi/3;
+			split2.GlobalRotation = r.Angle()-2*Mathf.Pi/3;
+
+			split1.CheckHit();
+			split2.CheckHit();
+		}
+		else{ RemoveSplitLasers();}
 	}
 
 	void CheckHit(){
@@ -68,6 +95,7 @@ public abstract partial class Laser : Node2D
 		else {
 			ScaleLaser(ray.TargetPosition.Length());
 			RemoveReflectedLaser();
+			RemoveSplitLasers();
 		}
 	}
 
@@ -76,5 +104,17 @@ public abstract partial class Laser : Node2D
 		RemoveChild(reflected);
 		reflected.Dispose();
 		reflected = null;
+	}
+	void RemoveSplitLasers(){
+		if (split1 is not null){
+		RemoveChild(split1);
+		split1.Dispose();
+		split1 = null;
+		}
+		if (split2 is not null){
+			RemoveChild(split2);
+			split2.Dispose();
+			split2 = null;
+		}
 	}
 }

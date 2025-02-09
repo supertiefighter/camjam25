@@ -6,7 +6,7 @@ public partial class BurnableBox : StaticBody2D
 	[Export]
 	float burn_time = 1;
 	[Export]
-	bool burning;
+	protected bool burning;
 	[Export]
 	CpuParticles2D fire;
 	// Called when the node enters the scene tree for the first time.

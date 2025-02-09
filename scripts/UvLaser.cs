@@ -16,7 +16,10 @@ public partial class UvLaser : Laser
 			door.hasUV=true;
 		}
 		if (obj is UvBox box){
-			box.ApplyCentralForce(Vector2.Right.Rotated(GlobalRotation)*50);
+			box.ApplyForce(Vector2.Right.Rotated(GlobalRotation));
+		}
+		if (obj is Keybox k){
+			k.hasUV = true;
 		}
     }
 }

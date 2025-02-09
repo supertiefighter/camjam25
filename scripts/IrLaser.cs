@@ -49,6 +49,9 @@ public partial class IrLaser : Laser
 		if (obj is BurnableBox box){
 			box.Ignite();
 		}
+		if (obj is Keybox k){
+			k.hasIR = true;
+		}
     }
 	public void FillBuffer()
 	{
