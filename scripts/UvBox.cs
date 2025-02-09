@@ -16,7 +16,8 @@ public partial class UvBox : StaticBody2D{
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		Position+=force*(float)delta;
+		Position+=force*(float)delta*32;
+		force = Vector2.Zero;
 	}
 
 	public void ApplyForce(Vector2 f){

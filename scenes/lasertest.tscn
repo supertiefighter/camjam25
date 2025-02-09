@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqincyk668t2c"]
+[gd_scene load_steps=12 format=3 uid="uid://dqincyk668t2c"]
 
 [ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/UVEmitter.tscn" id="2_lotyh"]
 [ext_resource type="PackedScene" uid="uid://b34qaxm2ir0wl" path="res://scenes/IREmitter.tscn" id="3_53ebf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://yryrb8rhaxc8" path="res://scenes/Splitter.tscn" id="8_3vq2h"]
 [ext_resource type="PackedScene" uid="uid://dj0fnm3imrkk" path="res://scenes/Keybox.tscn" id="9_p5bvj"]
 [ext_resource type="PackedScene" uid="uid://gqudogqpffef" path="res://scenes/key_door.tscn" id="10_wtagy"]
+[ext_resource type="PackedScene" uid="uid://dvmiw012til3y" path="res://scenes/hole.tscn" id="11_g273u"]
 
 [node name="lasertest" type="Node2D"]
 
@@ -56,3 +57,6 @@ position = Vector2(57, 282)
 
 [node name="KeyDoor" parent="." instance=ExtResource("10_wtagy")]
 position = Vector2(-253, 128)
+
+[node name="Hole" parent="." instance=ExtResource("11_g273u")]
+position = Vector2(218, 208)

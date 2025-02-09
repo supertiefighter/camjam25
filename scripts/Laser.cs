@@ -13,7 +13,7 @@ public abstract partial class Laser : Node2D
 	int depth = 0;
 
 	[Export]
-	AudioStreamPlayer2D audio;
+	protected AudioStreamPlayer2D audio;
 
 	protected Laser split1;
 	protected Laser split2;

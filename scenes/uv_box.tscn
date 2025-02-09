@@ -7,6 +7,7 @@
 size = Vector2(32, 32)
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 65
 script = ExtResource("1_f1fkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

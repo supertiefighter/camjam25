@@ -17,4 +17,4 @@ stream = ExtResource("2_k6hbd")
 volume_db = 15.245
 autoplay = true
 max_distance = 200.0
-attenuation = 4.14106
+attenuation = 4.00001
