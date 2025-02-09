@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://csekjr51d21ep"]
+[gd_scene load_steps=10 format=4 uid="uid://csekjr51d21ep"]
 
 [ext_resource type="PackedScene" uid="uid://b0bb5b30q1i1l" path="res://scenes/levels/LevelTemplate.tscn" id="1_7jbqk"]
-[ext_resource type="PackedScene" uid="uid://ceoq5mgmj1ii0" path="res://scenes/levels/level_3.tscn" id="2_044pw"]
 [ext_resource type="PackedScene" uid="uid://gqudogqpffef" path="res://scenes/key_door.tscn" id="2_rfoon"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="3_vkcfb"]
 [ext_resource type="PackedScene" uid="uid://23xhirgnrjx" path="res://scenes/uv_door.tscn" id="4_1hoke"]
@@ -21,7 +20,7 @@ tile_map_data = PackedByteArray("AAD///f/AQAAAAAAAAAAAPf/AQAAAAAAAAABAPf/AQAAAAA
 
 [node name="Win" parent="." index="3"]
 position = Vector2(432, -240)
-nextLevel = ExtResource("2_044pw")
+nextLevel = "res://scenes/levels/level_3.tscn"
 
 [node name="KeyDoor" parent="." index="4" instance=ExtResource("2_rfoon")]
 position = Vector2(400, -240)

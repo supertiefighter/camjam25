@@ -6,7 +6,7 @@ public partial class Win : Area2D
 	[Export]
 	Node2D Level;
 	[Export]
-	PackedScene nextLevel;
+	String nextLevel;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,7 +18,7 @@ public partial class Win : Area2D
 	}
 
 	public void onBodyEntered(Node2D body){
-		Level.AddSibling(nextLevel.Instantiate());
+		Level.AddSibling(ResourceLoader.Load<PackedScene>(nextLevel).Instantiate());
 		Level.GetParent().RemoveChild(Level);
 	}
 }

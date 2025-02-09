@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://dsodg0jt5mov1"]
+[gd_scene load_steps=8 format=4 uid="uid://dsodg0jt5mov1"]
 
 [ext_resource type="PackedScene" uid="uid://b0bb5b30q1i1l" path="res://scenes/levels/LevelTemplate.tscn" id="1_4nbl8"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="2_6mcr2"]
-[ext_resource type="PackedScene" uid="uid://csekjr51d21ep" path="res://scenes/levels/level2or3.tscn" id="2_mf7b7"]
 [ext_resource type="PackedScene" uid="uid://23xhirgnrjx" path="res://scenes/uv_door.tscn" id="2_nstae"]
 [ext_resource type="PackedScene" uid="uid://vfigkal14o" path="res://scenes/UVEmitter.tscn" id="3_edaip"]
 [ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="4_6tpd3"]
@@ -21,7 +20,7 @@ tile_map_data = PackedByteArray("AAD///f/AQAAAAAAAAAAAPf/AQAAAAAAAAABAPf/AQAAAAA
 
 [node name="Win" parent="." index="3"]
 position = Vector2(336, 16)
-nextLevel = ExtResource("2_mf7b7")
+nextLevel = "res://scenes/levels/level2or3.tscn"
 
 [node name="UVDoor" parent="." index="4" instance=ExtResource("2_nstae")]
 position = Vector2(176, 16)

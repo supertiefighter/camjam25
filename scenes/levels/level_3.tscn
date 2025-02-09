@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://ceoq5mgmj1ii0"]
+[gd_scene load_steps=11 format=4 uid="uid://ceoq5mgmj1ii0"]
 
 [ext_resource type="PackedScene" uid="uid://b0bb5b30q1i1l" path="res://scenes/levels/LevelTemplate.tscn" id="1_vu20j"]
-[ext_resource type="PackedScene" uid="uid://dsodg0jt5mov1" path="res://scenes/levels/level1.tscn" id="2_5pniw"]
 [ext_resource type="PackedScene" uid="uid://bvmotqt1t41k1" path="res://scenes/Mirror.tscn" id="2_cf6s7"]
 [ext_resource type="PackedScene" uid="uid://b34qaxm2ir0wl" path="res://scenes/IREmitter.tscn" id="3_1acnq"]
 [ext_resource type="PackedScene" uid="uid://bukyewfxo8gyd" path="res://scenes/BurnableBox.tscn" id="4_5hvkn"]
@@ -22,7 +21,7 @@ tile_map_data = PackedByteArray("AAD///f/AQAAAAAAAAAAAPf/AQAAAAAAAAABAPf/AQAAAAA
 
 [node name="Win" parent="." index="3"]
 position = Vector2(160, 240)
-nextLevel = ExtResource("2_5pniw")
+nextLevel = "res://scenes/levels/level1.tscn"
 
 [node name="Mirror" parent="." index="4" instance=ExtResource("2_cf6s7")]
 position = Vector2(-176, -64)
